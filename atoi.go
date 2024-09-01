@@ -2,25 +2,7 @@ package main
 
 import (
 	"fmt"
-	"os"
 )
-
-func IsPrime(x int) bool {
-	var isprime bool = false
-	if x == 2 {
-		isprime = true
-	}
-	for i := x - 1; i > 1; i-- {
-		if x%i == 0 {
-			isprime = false
-		} else {
-			isprime = true
-		}
-
-	}
-	return isprime
-
-}
 
 func Atoi(str string) int {
 	if len(str) == 0 {
@@ -50,18 +32,19 @@ func Atoi(str string) int {
 
 }
 func main() {
-	var result int
-	args := os.Args[1:]
-	if len(args) != 1 || Atoi(args[0]) < 0 {
-		fmt.Println("0")
-	}
-	for i := Atoi(args[0]); i > 1; i-- {
-		if IsPrime(i) {
-			fmt.Println(i, IsPrime(i))
-			result += i
-		}
+	a := "12456"
+	b := "12345"
 
-	}
+	c := "-12456"
+	d := "--12345"
+	e := "-5"
+	f := ""
 
-	fmt.Println(result)
+	fmt.Println(Atoi(a))
+	fmt.Println(Atoi(b))
+	fmt.Println(Atoi(c))
+	fmt.Println(Atoi(d))
+	fmt.Println(Atoi(e))
+	fmt.Println(Atoi(f))
+
 }

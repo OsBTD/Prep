@@ -29,7 +29,7 @@ func Atoi(str string) int {
 	var s string
 	var sign int = 1
 	for i := 0; i < len(str); i++ {
-		if string(str[0]) == "-" && string(str[1]) != "-" {
+		if string(str[0]) == "-" {
 			sign = -1
 		}
 		if string(str[i]) >= "0" && string(str[i]) <= "9" {
@@ -52,8 +52,13 @@ func Atoi(str string) int {
 func main() {
 	var result int
 	args := os.Args[1:]
-	if len(args) != 1 || Atoi(args[0]) < 0 {
+	if len(args) != 1 {
 		fmt.Println("0")
+		return
+	}
+	if len(args) == 1 && Atoi(args[0]) < 0 {
+		fmt.Println("0")
+		return
 	}
 	for i := Atoi(args[0]); i > 1; i-- {
 		if IsPrime(i) {

@@ -41,5 +41,6 @@ func WeAreUnique(str1, str2 string) int {
 		}
 
 	}
+	fmt.Println(unique)
 	return len(unique)
 }

@@ -20,6 +20,10 @@ func main() {
 	input5 := []uint{3, 2, 1, 5, 4}
 	fmt.Println("out of range test :", CanJump(input5))
 
+	input6 := []uint{3, 2, 1, 4, 4}
+	fmt.Println("test should be false :", CanJump(input6))
+
+
 }
 
 func CanJump(steps []uint) bool {
@@ -29,7 +33,7 @@ func CanJump(steps []uint) bool {
 		if i < len(steps)-1 && i + int(steps[i]) < len(steps) {
 			hop = i + int(steps[i])
 		}
-		if i == len(steps)-1 && (steps[i] == steps[hop]) {
+		if i == len(steps)-1 && i == hop {
 			jump = true
 		} else {
 			jump = false

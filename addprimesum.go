@@ -13,6 +13,7 @@ func IsPrime(x int) bool {
 	for i := x - 1; i > 1; i-- {
 		if x%i == 0 {
 			isprime = false
+			break
 		} else {
 			isprime = true
 		}
